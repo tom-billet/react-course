@@ -5,27 +5,47 @@ document.addEventListener("DOMContentLoaded", () => {
     const filterTasks = document.getElementById("filterTasks");
 
     let tasks = [];
+    localStorage.setItem("bonjour", "hello world");
     
     addTaskBtn.addEventListener("click", () => {
         const text = taskInput.value.trim();
         if (text) {
-            let task = {text, done: false};
+            let task = new Map;
+            task.set("text", text);
+            task.set("done", false);
             addTask(task);
             taskInput.value = "";
             renderTasks();
         }
     });
 
+
     function addTask(task) {
+        let tasks = [];
         tasks = getTasks();
+        console.log(typeof tasks);
         tasks.push(task);
-        localStorage.setItem("tasks", tasks);
+        
+        localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 
+
     function getTasks() {
-        tasks = JSON.parse(localStorage.getItem("tasks"));
-        return tasks;
+
+        if (localStorage.getItem("tasks") !== null) {
+            let tasks = JSON.parse(localStorage.getItem("tasks"));
+            console.log("getTasks type :");
+            console.log(typeof tasks);
+            console.log(tasks);
+            return tasks;
+        }
+        else {
+            let tasks = new Array;
+            localStorage.setItem("tasks", tasks);
+            return tasks
+        }
     }
+
 
     function renderTasks() {
         taskList.innerHTML = "";
