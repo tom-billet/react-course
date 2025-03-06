@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9ff;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #ecedf6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.controls {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+input, select {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background: #626ff1;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#filterTasks {
+    background: #cccedf;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #bcbfee;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.task input[type="text"] {
+    border: none;
+    background: transparent;
+    flex: 1;
+}
+
+.task input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.task button {
+    background: #efefef;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    background-color: black;
+    transition-duration: 250ms;
+}
+
+.task button:hover {
+    background-color: white;
+    color: black;
+    outline: 1px solid black;
+    transition-duration: 250ms;
+}
