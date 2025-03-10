@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App() { 
+
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1>ToDo List</h1>
+      <div id="">
+        <form>
+          <input type="text" placeholder="ToDo..." id="task-input"></input>
+          <button id="task-add-btn">Add task</button>
+        </form>
+        <select id="task-filter-choice">
+          <option>All tasks</option>
+          <option>Unfinished</option>
+          <option>Finished</option>
+        </select>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
+      <div>
+        <ul id="task list">
+
+          <li className="task">
+            <input type="checkbox" className="task-check"></input>
+            <input type="text" className="task-text" value="example of task"></input>
+          </li>
+
+          <li className="task">
+            <input type="checkbox" className="task-check"></input>
+            <input type="text" className="task-text" value="example of task"></input>
+          </li>
+
+        </ul>
+      </div>
+      
+    </>
+
+    )
+  }
 export default App
